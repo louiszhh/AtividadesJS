@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form id="meuFormulario">
+            <label for="Numero">Média do vetor[3, 1, 4, 9]</label>
+            <button type="submit">Calcular</button>
+        </form>
+    </center>
+
+    <script>
+        const numero = [3, 1, 4, 9];
+        const formulario = document.getElementById('meuFormulario');
+
+        formulario.addEventListener('submit', function (evento){
+            evento.preventDefault();
+
+            if(numero === " ") {
+                alert('Preencha corretamente');
+                return false;
+            }else{
+                alert((numero[0] * numero[1] * numero[2] * numero[3]) / 4)
+            }
+        });
+    </script>
+</body>
+</html>

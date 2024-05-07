@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+        <form id="meuFormulario">
+            <label for="Numero1">Somas das matrizes:<br>
+                [2, 4, 8]&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp[1, 4, 2]<br>
+                [2, 3, 2]&nbsp e &nbsp[2, 7, 2]<br>
+                [6, 7, 5]&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp[9, 7, 3]<br><br>
+
+
+
+              </label>
+            <button type="submit">Calcular</button>
+        </form>
+
+
+    <script>
+
+        const matriz1 = [[2, 4, 8],
+                        [2, 3, 2],
+                        [6, 7, 5]];
+
+        const matriz2 = [[1, 4, 2],
+                        [2, 7, 2],
+                        [9, 7, 3]];
+
+        const formulario = document.getElementById('meuFormulario');
+
+        formulario.addEventListener('submit', function (evento) {
+            evento.preventDefault(); // impede o envio do formulário
+
+            let resultado = [];
+
+            const quebralinha = "\n"
+
+            for (let i = 0; i < matriz1.length; i++) {
+                resultado[i] = [];
+                for (let j = 0; j < matriz1[i].length; j++) {
+                    resultado[i][j] = matriz1[i][j] + matriz2[i][j];
+                }
+            }
+
+            alert("A soma das matrizes é: \n" +  (resultado));
+        });
+    </script>
+</body>
+
+</html>

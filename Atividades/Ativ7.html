@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="meuFormulario">
+        <label for="fatorial">Número a ser calculado o fatorial:</label>
+        <input type="number" id="fatorial" name="fatorial">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+
+        const formulario = document.getElementById('meuFormulario');
+
+        formulario.addEventListener('submit', function (evento) {
+            evento.preventDefault(); // impede o envio do formulário
+
+            const fatorial = parseInt(document.getElementById('fatorial').value);
+            var resultado = fatorial;
+
+            if (fatorial === '') {
+                alert('Preencha o campo!');
+                return false;
+            }
+            else { 
+            for (var i = 1; i < fatorial; i++) {
+                resultado *= i;
+            }
+            alert(resultado);
+        }
+            
+
+        });
+    </script>
+</body>
+
+</html>

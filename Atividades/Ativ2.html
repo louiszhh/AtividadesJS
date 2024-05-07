@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="meuFormulario">
+        <label for="Numero1">Numero1:</label>
+        <input type="number" id="numero1" name="numero1">
+        <label for="Numero2">Numero2:</label>
+        <input type="number" id="numero2" name="numero2">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const formulario = document.getElementById('meuFormulario');
+
+        formulario.addEventListener('submit', function (evento) {
+        evento.preventDefault(); // impede o envio do formulário
+
+        const numero1 = parseInt(document.getElementById('numero1').value);
+        const numero2 = parseInt(document.getElementById('numero2').value);
+
+        if ((numero1 === '') || (numero2 === '')) {
+            alert('Preencha ambos os campos com números válidos');
+            return false;
+        } else{
+            if (numero1 < numero2) {
+                 alert(numero1 + " é maior");
+            } else {
+                alert(numero2 + " é maior");
+            }
+        }
+        });
+    </script>
+</body>
+
+</html>

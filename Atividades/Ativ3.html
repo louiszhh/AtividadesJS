@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="meuFormulario">
+        <label for="Nota">Insira o valor da nota:</label>
+        <input type="number" id="nota" name="nota">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const formulario = document.getElementById('meuFormulario');
+
+        formulario.addEventListener('submit', function (evento) {
+        evento.preventDefault(); // impede o envio do formulário
+
+        const nota = parseInt(document.getElementById('nota').value);
+
+        if (nota === '') {
+            alert('Preencha ambos os campos com números válidos');
+            return false;
+        } else{
+            if (nota < 6) {
+                 alert("Reprovado");
+            } 
+            if ((nota >= 6) && (numero1 < 8)){
+                alert("Aprovado");
+            }
+            if (nota > 8){
+                alert("Aprovado com Louvor")
+            }
+        }
+        });
+    </script>
+</body>
+
+</html>

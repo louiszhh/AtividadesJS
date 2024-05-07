@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="meuFormulario">
+        <label for="letra">Insira uma Letra:</label>
+        <input type="text" id="letra" name="letra">
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        const formulario = document.getElementById('meuFormulario');
+
+        formulario.addEventListener('submit', function(evento){
+            evento.preventDefault();
+
+            const letra = (document.getElementById('letra').value);
+
+            if(letra === ''){
+                alert('Prencha o cmapo');
+                return false;
+            }
+            if(letra ==='a'){
+                alert('a');
+            }
+            if(letra ==='b'){
+                alert('b');
+            }
+            if(letra !== "a" && letra !== "b"){
+                alert('Outra letra')
+            }
+        });
+    </script>
+</body>
+</html>
